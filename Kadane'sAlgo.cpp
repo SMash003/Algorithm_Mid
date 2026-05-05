@@ -13,12 +13,12 @@ int main(){
     }
 
     int currSum = vec[0], maxSum = vec[0];
-    for(int i=0; i<n; i++){
+
+    for(int i=1; i<n; i++){
         currSum = max(vec[i], currSum + vec[i]);
         maxSum = max(maxSum, currSum);
     }
  
-    
-    cout << "Maximum subarray sum: " << maxSum;
+    cout << "Maximum subarray sum: " << maxSum << endl;
     return 0;
 }
