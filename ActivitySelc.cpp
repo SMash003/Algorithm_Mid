@@ -14,13 +14,11 @@ int main() {
     cout << "Number of activities: " << endl;
     cin >> n;
 
-    vector<Activity> vec;
+    vector<Activity> vec(n);
 
     cout << "Start and end of activities: " << endl;
     for (int i = 0; i < n; i++) {
-        Activity temp;
-        cin >> temp.start >> temp.end;
-        vec.push_back(temp);
+        cin >> vec[i].start >> vec[i].end;
     }
 
     sort(vec.begin(), vec.end(), compare);
