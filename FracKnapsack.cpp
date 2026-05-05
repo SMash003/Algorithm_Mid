@@ -1,26 +1,29 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-struct Item {
+struct Item
+{
     int weight, value;
 };
 
-bool compare(Item a, Item b) {
+bool compare(Item a, Item b)
+{
     double r1 = (double)a.value / a.weight;
     double r2 = (double)b.value / b.weight;
     return r1 > r2;
 }
 
-int main() {
+int main()
+{
     int n;
     cout << "Enter number of items: ";
     cin >> n;
 
     vector<Item> items(n);
 
-    cout << "Enter weight and value of each item:\n";
-    for (int i = 0; i < n; i++) {
+    cout << "Enter weight and value of each item:" << endl;
+    for (int i = 0; i < n; i++)
+    {
         cin >> items[i].weight >> items[i].value;
     }
 
@@ -32,11 +35,15 @@ int main() {
 
     double totalValue = 0.0;
 
-    for (int i = 0; i < n; i++) {
-        if (capacity >= items[i].weight) {
+    for (int i = 0; i < n; i++)
+    {
+        if (capacity >= items[i].weight)
+        {
             totalValue += items[i].value;
             capacity -= items[i].weight;
-        } else {
+        }
+        else
+        {
             totalValue += (double)items[i].value / items[i].weight * capacity;
             break;
         }
