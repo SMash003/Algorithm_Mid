@@ -22,10 +22,13 @@ void rabinKarp(string text, string pattern)
         tHash = (tHash * base + text[i]) % mod;
     }
 
+    cout << "Initial Pattern Hash: " << pHash << endl;
+
     bool found = false;
 
     for (int i = 0; i <= n - m; i++)
     {
+        cout << "Index " << i << " -> tHash: " << tHash << endl;
 
         if (pHash == tHash)
         {
